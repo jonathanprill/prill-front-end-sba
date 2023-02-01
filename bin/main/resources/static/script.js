@@ -8,6 +8,8 @@ toggleButton.onclick = function () {
 function lightmode() {
     var element = document.body;
     element.classList.remove("dark-mode");
+    var tableEl = document.getElementById('mytab1');
+    tableEl.classList.remove("table-dark")
 
     var elements = document.querySelectorAll(".card, .topnav, .card-content");
     for (i = 0; i <= elements.length - 1; i++) {
@@ -19,6 +21,8 @@ function lightmode() {
 function darkmode() {
     var element = document.body;
     element.classList.add("dark-mode");
+    var tableEl = document.getElementById('mytab1');
+    tableEl.classList.add("table-dark")
 
     var elements = document.querySelectorAll(".card, .topnav, .card-content");
     for (i = 0; i <= elements.length - 1; i++) {
@@ -38,6 +42,9 @@ var followers = document.getElementById("followers");
 var rapidRating = document.getElementById("rapid-rating");
 var blitzRating = document.getElementById("blitz-rating");
 var bulletRating = document.getElementById("bullet-rating");
+var blitzRatio = document.getElementById("blitz-ratio");
+var bulletRatio = document.getElementById("bullet-ratio");
+var rapidRatio = document.getElementById("rapid-ratio");
 
 
 function runSearch(e) {
@@ -49,6 +56,64 @@ function runSearch(e) {
             blitzRating.innerHTML = data.chess_blitz.best.rating;
             bulletRating.innerHTML = data.chess_bullet.best.rating;
             console.log(data)
+            ///////////////progress bars/////////////////
+            // https://www.w3schools.com/howto/howto_js_progressbar.asp
+            // blitz bar
+            var blitzWLRatio = (data.chess_blitz.record.win / data.chess_blitz.record.loss) / 2 * 100;
+            var blitzWLRatioRounded = Math.round(blitzWLRatio * 100) / 100
+            var blitzEl = document.getElementById("blitzBar");
+            var blitzWidth = 1;
+            var blitzId = setInterval(frame1, 10);
+            if (blitzWLRatio > 100) {
+                blitzWLRatio = 100;
+            }
+            function frame1() {
+                if (blitzWidth >= blitzWLRatio) {
+                    clearInterval(blitzId);
+                } else {
+                    blitzWidth++;
+                    blitzEl.style.width = blitzWidth + "%";
+                }
+            }
+            blitzRatio.innerHTML = "Blitz Win/Loss Ratio: " + blitzWLRatioRounded;
+            // bullet bar
+            var bulletWLRatio = (data.chess_bullet.record.win / data.chess_bullet.record.loss) / 2 * 100;
+            var bulletWLRatioRounded = Math.round(bulletWLRatio * 100) / 100
+            var bulletEl = document.getElementById("bulletBar");
+            var width = 1;
+            var id = setInterval(frame2, 10);
+            if (bulletWLRatio > 100) {
+                bulletWLRatio = 100;
+            }
+            function frame2() {
+                if (width >= bulletWLRatio) {
+                    clearInterval(id);
+                } else {
+                    width++;
+                    bulletEl.style.width = width + "%";
+                }
+            }
+            bulletRatio.innerHTML = "bullet Win/Loss Ratio: " + bulletWLRatioRounded;
+            // rapid bar
+            var rapidWLRatio = (data.chess_rapid.record.win / data.chess_rapid.record.loss) / 2 * 100;
+            var rapidWLRatioRounded = Math.round(rapidWLRatio * 100) / 100
+            var rapidEl = document.getElementById("rapidBar");
+            var rapidWidth = 1;
+            var rapidId = setInterval(frame, 10);
+            if (rapidWLRatio > 100) {
+                rapidWLRatio = 100;
+            }
+            function frame() {
+                if (rapidWidth >= rapidWLRatio) {
+                    clearInterval(rapidId);
+                } else {
+                    rapidWidth++;
+                    rapidEl.style.width = rapidWidth + "%";
+                }
+            }
+            rapidRatio.innerHTML = "rapid Win/Loss Ratio: " + rapidWLRatioRounded;
+
+
         });
     })
     fetch("https://api.chess.com/pub/player/" + searchEl.value).then(function (response) {
@@ -85,6 +150,9 @@ function runSearch(e) {
     rapidRating.classList.remove("placeholder");
     bulletRating.classList.remove("placeholder");
     onlinePic.classList.remove("placeholder");
+    blitzRatio.classList.remove("placeholder");
+    bulletRatio.classList.remove("placeholder");
+    rapidRatio.classList.remove("placeholder");
 }
 
 formEl.addEventListener("submit", runSearch);
@@ -112,14 +180,18 @@ function validate() {
 }
 
 function validateEmail() {
-	var emailID = document.myForm.email.value;
-	atpos = emailID.indexOf("@");
-	//alert(atpos)
-	dotpos = emailID.lastIndexOf(".");
-	if (atpos < 1 || (dotpos - atpos < 2)) {
-		return false;
-	} else {
-		return true;
-	}
+    var emailID = document.myForm.email.value;
+    atpos = emailID.indexOf("@");
+    //alert(atpos)
+    dotpos = emailID.lastIndexOf(".");
+    if (atpos < 1 || (dotpos - atpos < 2)) {
+        return false;
+    } else {
+        return true;
+    }
 }
+
+
+
+
 

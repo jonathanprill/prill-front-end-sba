@@ -21,7 +21,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
     <link rel="stylesheet" href="../static/styles.css">
-    <title>Chess Website</title>
+    <title>Chess Queries</title>
 </head>
 
 <body>
@@ -34,8 +34,7 @@
         </svg>
     </div>
     <!-- Top navigation Bar -->
-    <div class="topnav" id="topnav">
-
+    <nav class="topnav" id="topnav">
 
         <!-- RH NAV -->
         <div class="rh-topnav">
@@ -79,14 +78,10 @@
             <!-- Profile Picture -->
             <img class="profile-pic" src="https://api.lorem.space/image/face?hash=33791" />
         </div>
-
-    </div>
-
+    </nav>
 
     <!-- side navigation -->
     <nav class="sidebar" id="navbar">
-
-
         <!-- Top Logo -->
         <a class="logo" href="#">
             <svg xmlns="http://www.w3.org/2000/svg" width="36.25" height="32" viewBox="0 0 256 226">
@@ -95,16 +90,12 @@
                 <path fill="#FFF"
                     d="m128.022 119.1l-27.958 48.22h55.829l-27.87-48.22M89.241 58.366H33.314l28.05 48.147l27.877-48.147M.066 109.711h55.826L27.942 61.48L.066 109.711m27.876 54.536l27.95-48.266H.066l27.876 48.266M227.919 61.48l-27.859 48.232h55.817L227.919 61.48m27.961 54.5h-55.821l27.862 48.266l27.958-48.266M189.232.67h-55.839l27.868 48.177L189.232.669M155.894 173.6H99.973l28.05 48.582l27.87-48.582m5.367 3.109l-27.865 48.652h55.835l-27.97-48.652M122.568.67H66.722l27.89 48.177L122.567.669M61.363 3.795L33.314 52.097H89.24L61.363 3.795m133.235 0l-27.95 48.302h55.909L194.598 3.795m27.961 54.571H166.65l27.95 48.147l27.959-48.147M94.613 176.709L66.724 225.36h55.845l-27.956-48.652" />
             </svg>
-
-
         </a>
-
         <div class="sidebar-list">
             <!-- Home Icon -->
             <h7 class="py-2"><a style="text-decoration: none; color: inherit;" href="./home.html"><svg
-                        xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24">
-                        <path fill="currentColor"
-                            d="M12 .64L8.23 3H5v2L2.97 6.29C2.39 6.64 2 7.27 2 8v10a2 2 0 0 0 2 2h16c1.11 0 2-.89 2-2V8c0-.73-.39-1.36-.97-1.71L19 5V3h-3.23M7 5h10v4.88L12 13L7 9.88M8 6v1.5h8V6M5 7.38v1.25L4 8m15-.62L20 8l-1 .63M8 8.5V10h8V8.5Z" />
+                        xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24">
+                        <path fill="currentColor" d="M10 20v-6h4v6h5v-8h3L12 3L2 12h3v8z" />
                     </svg></a></h7>
             <!-- Puzzle Icon -->
             <h7 class="py-2"><a style="text-decoration: none; color: inherit;" href="./puzzles.html"><svg
@@ -125,15 +116,21 @@
                     </svg></a></h7>
             <hr class="me-5" />
         </div>
-
-
     </nav>
 
-
     <!-- Page Content -->
-
     <div class="container-sm py-4" id="page-content">
-        <div class='login-card'>
+        <!-- Welcome Section -->
+        <section class="welcome-section">
+            <h1>Welcome To Chess Queries</h1>
+            <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis possimus temporibus minima laboriosam
+                provident eveniet aliquam iste iure sapiente tempora veritatis suscipit sunt, officia repellat
+                voluptatum perspiciatis velit nemo repudiandae!
+            </p>
+        </section>
+
+        <!-- newsletter signup section -->
+        <section class='login-card'>
             <div class='login-form-container login-form-bg'>
                 <form class='login-form-left' name="myForm" onsubmit="validate()">
                     <h3 class="login-welcome">Become a Member</h3>
@@ -155,10 +152,88 @@
                     <p id="login-success">Let's Connect</p>
                 </div>
             </div>
-        </div>
+        </section>
+
+        <!-- About us Section -->
+        <section class="about-section">
+            <h1>How We Operate</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores numquam cum facere sapiente possimus.
+                Nulla fuga deserunt excepturi quod quas suscipit facilis iure tempore. Quasi iure illum modi nobis.
+                Porro amet eveniet ducimus exercitationem natus quidem iusto ut velit, repellendus nostrum alias
+                officia, adipisci et, ratione suscipit a. Hic consequuntur repellat numquam dignissimos. Maiores
+                molestiae a, perferendis debitis eius cumque dolore exercitationem eos maxime repellendus odio in
+                doloremque! Voluptas voluptates nemo.
+            </p>
+        </section>
+
+        <!-- Meet player section -->
+        <section class="meet-player-section">
+            <h1>Meet Your Heroes</h1>
+
+            <div class="meet-player-cards">
+
+                <article class="meet-player-card">
+                    <img src="../static/images/magnus.webp" alt="player" style="height: 500px;">
+                    <div class="player-bio">
+                        <h3>Magnus Carlsen</h3>
+                        <h5>Grand Master</h5>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque excepturi magnam, debitis
+                            unde corporis obcaecati porro consectetur earum voluptate optio?</p>
+                    </div>
+                </article>
+                <article class="meet-player-card">
+                    <img src="../static/images/hikaru.webp" alt="player" style="height: 500px;">
+                    <div class="player-bio">
+                        <h3>Hikaru Nakamura</h3>
+                        <h5>Grand Master</h5>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque excepturi magnam, debitis
+                            unde corporis obcaecati porro consectetur earum voluptate optio?</p>
+                    </div>
+                </article>
+                <article class="meet-player-card">
+                    <img src="../static/images/anish.jpeg" alt="player" style="height: 500px;">
+                    <div class="player-bio">
+                        <h3>Anish Giri</h3>
+                        <h5>Grand Master</h5>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque excepturi magnam, debitis
+                            unde corporis obcaecati porro consectetur earum voluptate optio?</p>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Reach out section -->
+        <section class="reach-out-section">
+            <h1>Reach Out</h1>
+
+            <div class="contact-section">
+                <div class="message-form">
+                    <form>
+                        <h3>Send Us a Message</h3>
+                        <div class="mb-3">
+                            <div class="input-group">
+                                <span class="input-group-text" id="basic-addon3">Enter Your Name</span>
+                                <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3">
+                            </div>
+                        </div>
+
+                        <div class="input-group">
+                            <span class="input-group-text">Enter A Message</span>
+                            <textarea class="form-control" aria-label="With textarea"
+                                aria-describedby="button-addon2"></textarea>
+                            <button class="btn btn-outline-secondary" type="button" id="button-addon2">Submit</button>
+                        </div>
+                    </form>
+                </div>
+
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d107116.1016420698!2d-97.81143524785382!3d30.280856877281863!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8644b586e0f968db%3A0x9b503f3c7a9772ba!2sZilker%20Metropolitan%20Park!5e0!3m2!1sen!2sus!4v1675260598196!5m2!1sen!2sus"
+                    width="400" height="400" style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+        </section>
     </div>
-
-
     <script src="../static/script.js"></script>
 </body>
 

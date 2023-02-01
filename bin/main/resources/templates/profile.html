@@ -21,7 +21,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
     <link rel="stylesheet" href="../static/styles.css">
-    <title>Chess Website</title>
+    <title>Chess Queries</title>
 </head>
 
 <body>
@@ -102,9 +102,8 @@
         <div class="sidebar-list">
             <!-- Home Icon -->
             <h7 class="py-2"><a style="text-decoration: none; color: inherit;" href="./home.html"><svg
-                        xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24">
-                        <path fill="currentColor"
-                            d="M12 .64L8.23 3H5v2L2.97 6.29C2.39 6.64 2 7.27 2 8v10a2 2 0 0 0 2 2h16c1.11 0 2-.89 2-2V8c0-.73-.39-1.36-.97-1.71L19 5V3h-3.23M7 5h10v4.88L12 13L7 9.88M8 6v1.5h8V6M5 7.38v1.25L4 8m15-.62L20 8l-1 .63M8 8.5V10h8V8.5Z" />
+                        xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24">
+                        <path fill="currentColor" d="M10 20v-6h4v6h5v-8h3L12 3L2 12h3v8z" />
                     </svg></a></h7>
             <!-- Puzzle Icon -->
             <h7 class="py-2"><a style="text-decoration: none; color: inherit;" href="./puzzles.html"><svg
@@ -133,8 +132,8 @@
     <!-- Page Content -->
 
     <div class="page-content container-sm py-4" id="page-content">
-
-        <div class="online-container card placeholder-glow">
+        <h1 style="width: 100%; text-align: center; margin-bottom: 40px;">Search Your Favorite Players</h1>
+        <section class="online-container card placeholder-glow">
             <h5 style="margin-bottom: 20px;">Featured Profile</h5>
             <div class="online-pic-bg">
                 <img class="online-pic placeholder" alt="" id="online-pic">
@@ -182,7 +181,39 @@
             </div>
 
 
-        </div>
+        </section>
+
+        <section class="card progress-section placeholder-glow">
+            <!-- blitz bar -->
+            <article>
+                <!-- https://www.w3schools.com/howto/howto_js_progressbar.asp -->
+                <div id="myProgress" class="progress" role="progressbar" aria-label="Animated striped example"
+                    aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
+                    <div id="blitzBar" class="progress-bar progress-bar-striped progress-bar-animated"></div>
+                </div>
+                <p class="rating-text placeholder" id="blitz-ratio">my blitz ratio</p>
+            </article>
+            <!-- bullet bar -->
+            <article>
+                <!-- https://www.w3schools.com/howto/howto_js_progressbar.asp -->
+                <div id="myBulletProgress" class="progress" role="progressbar" aria-label="Animated striped example"
+                    aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
+                    <div id="bulletBar" class="progress-bar progress-bar-striped progress-bar-animated"></div>
+                </div>
+                <p class="rating-text placeholder" id="bullet-ratio">my bullet ratio</p>
+            </article>
+            <!-- rapid bar -->
+            <article>
+                <!-- https://www.w3schools.com/howto/howto_js_progressbar.asp -->
+                <div id="myRapidProgress" class="progress" role="progressbar" aria-label="Animated striped example"
+                    aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
+                    <div id="rapidBar" class="progress-bar progress-bar-striped progress-bar-animated"></div>
+                </div>
+                <p class="rating-text placeholder" id="rapid-ratio">my rapid ratio</p>
+            </article>
+
+
+        </section>
 
     </div>
 

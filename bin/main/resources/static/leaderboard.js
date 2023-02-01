@@ -6,11 +6,11 @@ function selectNumber() {
     selectedNum = mylist.options[mylist.selectedIndex].text;
     console.log(selectedNum)
     table.innerHTML="";
-    runQuery()
+    populateTable()
 }
 
-
-function runQuery() {
+////////populate table////////////
+function populateTable() {
 
 
     fetch("https://api.chess.com/pub/leaderboards").then(function (response) {
@@ -54,4 +54,4 @@ function runQuery() {
 
 }
 
-runQuery()
+populateTable()
