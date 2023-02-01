@@ -19,6 +19,7 @@
     <img src="https://img.shields.io/badge/-APIs-yellow" />
 </p>
 
+![ScreenShot](./src/main/resources/static/images/prill-fe-sba-gif.gif "screenshot")
 
 ## Description
 
